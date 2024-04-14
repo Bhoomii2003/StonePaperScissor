@@ -1,14 +1,9 @@
 let userScore=0;
 let compScore=0;
-
 const choices=document.querySelectorAll(".choice");
 const msg=document.querySelector("#msg");
 const userScorePara=document.querySelector("#user-score");
 const compScorePara=document.querySelector("#comp-score");
-
-
-
-
 const  genCompChoice=() =>{
   const options=["rock","paper" ,"scissors"];
  const randomIdx= Math.floor(Math.random()*3);
@@ -16,7 +11,6 @@ const  genCompChoice=() =>{
    //rock,papper,scissor
 };
 const drawGame=() =>{
-  
     msg.innerText= "Game was Draw.play again!"
     msg .style.backgroundColor="#081b31";
 };
@@ -31,8 +25,6 @@ const drawGame=() =>{
       compScorePara.innerText=compScore;
        msg.innerText= `you lose! ${compChoice} beats ${userChoice}`;
       msg .style.backgroundColor="red";
-
-
     }
    }
 const playGame=(userChoice) =>{
@@ -44,17 +36,14 @@ const playGame=(userChoice) =>{
     let userWin=true;
     if(userChoice=="rock"){
      userWin= compChoice==="paper" ? false:true;
-
-    }else if(userChoice==="paper"){
+  }else if(userChoice==="paper"){
       userWin= compChoice==="scissors"   ? false:true;
     }else{
       userWin= compChoice==="rock"?false:true;
     }
     showWinner(userWin,userChoice,compChoice);
   }
-
 };
-
 choices.forEach((choice) =>{
  choice.addEventListener("click",() =>{
     const userChoice=choice.getAttribute("id")
